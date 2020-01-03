@@ -6,6 +6,10 @@
 # Testing in EditMode
 #
 
+if [! -z "$INPUT_WORKDIR" ] ; then
+  cd "$INPUT_WORKDIR"
+fi
+
 xvfb-run --auto-servernum --server-args='-screen 0 640x480x24' \
 /opt/Unity/Editor/Unity \
   -batchmode \
