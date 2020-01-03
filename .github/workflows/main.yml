@@ -22,6 +22,11 @@ jobs:
         with:
           args: -manualLicenseFile UnityLicenseFile.ulf -quit
 
+      - name: Verify activation
+        uses: ./
+        with:
+          args: -quit
+
       # Configure test runner
       - name: Run tests
         uses: ./
@@ -29,7 +34,7 @@ jobs:
           args: -runTests -projectPath .
           workdir: unity-project-with-correct-tests
       
-      - name: Activate license
+      - name: Return license
         uses: ./
         with:
           args: -returnlicense -quit      
