@@ -19,7 +19,8 @@ jobs:
       - name: Activate license
         uses: ./
         with:
-          args: -manualLicenseFile UnityLicenseFile.ulf -quit && true       
+          args: -manualLicenseFile UnityLicenseFile.ulf -quit
+          continue-on-error: true      
 
       # Configure test runner
       - name: Run tests
