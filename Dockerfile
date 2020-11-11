@@ -20,16 +20,13 @@ RUN /opt/Unity/Editor/Data/NetCore/Sdk-2.2.107/dotnet tool install dotnet-sonars
 COPY unity_csc.sh.patch .
 RUN patch /opt/Unity/Editor/Data/Tools/RoslynScripts/unity_csc.sh unity_csc.sh.patch
 
-COPY entrypoint.sh /entrypoint.sh
-COPY activate.sh /activate.sh
-COPY sonar-scanner.sh /sonar-scanner.sh
+COPY entrypoint.sh activate.sh sonar-scanner.sh request_activation.sh /
 
 ENV DOTNET_ROOT=/opt/Unity/Editor/Data/NetCore/Sdk-2.2.107/
 
-ADD request_activation.sh /request_activation.sh
-RUN chmod +x /entrypoint.sh
-RUN chmod +x /activate.sh
-RUN chmod +x /request_activation.sh
-RUN chmod +x /sonar-scanner.sh
+RUN chmod +x /entrypoint.sh && \
+    chmod +x /activate.sh && \
+    chmod +x /request_activation.sh && \
+    chmod +x /sonar-scanner.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
