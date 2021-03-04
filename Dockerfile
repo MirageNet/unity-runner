@@ -34,6 +34,6 @@ RUN chmod +x /entrypoint.sh && \
     chmod +x /activate.sh && \
     chmod +x /request_activation.sh && \
     chmod +x /sonar-scanner.sh && \
-    chmod +x /request_activation.sh 
+    chmod +x /docfx.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
