@@ -33,6 +33,7 @@ ENV DOTNET_ROOT=/opt/Unity/Editor/Data/NetCore/Sdk-2.2.107/
 RUN chmod +x /entrypoint.sh && \
     chmod +x /activate.sh && \
     chmod +x /request_activation.sh && \
-    chmod +x /sonar-scanner.sh
+    chmod +x /sonar-scanner.sh && \
+    chmod +x /request_activation.sh 
 
 ENTRYPOINT ["/entrypoint.sh"]
