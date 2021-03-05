@@ -7,6 +7,8 @@ GitHub Action to
 [run unity](https://github.com/marketplace/actions/unity-runner) 
 for any Unity project. 
 
+This Action also includes sonar cloud and docfx installs
+
 ---
 
 ## Usage
